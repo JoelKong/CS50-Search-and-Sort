@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Declaring functions
 void bubble(int n,int k[]);
 int binary(int k[], int find, int low, int high);
 int binaryRec(int k[], int find, int low, int high);
@@ -8,10 +9,13 @@ int binaryRec(int k[], int find, int low, int high);
 int main(void)
 {
     int problem[] = {6,2,3,4,5,1,7,8,14,10,11,12,13,9,15,16,17,18,20,19,26,25,32,31,31};
+    
+    //Length of array
     size_t problemLen = sizeof(problem) / sizeof(problem[0]);
 
     bubble(problemLen, problem);
 
+    //Print the newly sorted array
     printf("Sorted array: \n");
     for(int y = 0; y < problemLen; y++)
     {
@@ -19,7 +23,7 @@ int main(void)
     }
     printf("\n");
 
-
+    //Printing the index of an element through binary search
     int result = binary(problem, 25, 0, problemLen - 1);
     int resultRec = binaryRec(problem, 25, 0, problemLen - 1);
     if(result == -1)
@@ -50,7 +54,7 @@ int main(void)
 
 
 
-
+//Bubble sort
 void bubble(int n, int k[])
 {
     int swapCounter = 1;
@@ -72,7 +76,7 @@ void bubble(int n, int k[])
 }
 
 
-//Iterative
+//Iterative Binary Search
 int binary(int k[], int find, int low, int high)
 {
     while(low <= high)
@@ -94,7 +98,7 @@ int binary(int k[], int find, int low, int high)
     return -1;
 }
 
-//Recursive
+//Recursive Binary Search
 int binaryRec(int k[], int find, int low, int high) {
   if (high >= low) {
     int mid = low + (high - low) / 2;
