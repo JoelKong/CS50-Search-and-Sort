@@ -68,7 +68,7 @@ void bubble(int n, int k[])
                 int subvar = k[x];
                 k[x] = k[x+1];
                 k[x+1] = subvar;
-                swapCounter += 1;
+                swapCounter = 1;
 
             }
         }
